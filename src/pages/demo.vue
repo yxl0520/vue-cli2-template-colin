@@ -13,13 +13,23 @@
     <div class="axios-get">
       {{axiosData}}
     </div>
+    <h2>4. iconFont component Use Demo</h2>
+    <div class="icon-font">
+      <!-- 备注：演示用的icon-font库，引用自“员工自助”项目--Colin -->
+      这是“iconfont”：
+      <icon-font type="icon_drop_down" iconStyle="color: #f0f; font-size: 30px" />
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import IconFont from '@/components/common/IconFont'
 export default {
   name: 'demo',
+  components: {
+    IconFont
+  },
   computed: {
     ...mapState(['user']), // 导入 vuex “根仓库”
     ...mapState('vuexModuleDemo', [ // 导入 vuex “模块仓库”
