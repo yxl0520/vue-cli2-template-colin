@@ -1,0 +1,76 @@
+/* 通用底部布局容器，一般放置按钮 */
+.footer {
+  background-color: white;
+  height: 72px;
+  padding: 0 20px;
+}
+/* 指定填充颜色、圆角、字体大小、颜色的按钮 */
+.btn-fill-round {
+  background-color: #D23930;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+}
+/* 指定边框大小和颜色、圆角、字体大小、颜色的按钮 */
+.btn-stroke-round {
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid #D23930;
+  color: #D23930;
+  font-size: 18px;
+  font-weight: 400;
+}
+/* 通用标签样式：字体颜色、大小对齐方式 */
+.label {
+  color: #999999;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  text-align: end;
+}
+/* 通用值样式：字体颜色、大小对齐方式 */
+.value {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 400;
+}
+/* 60像素宽 */
+.width-60 {
+  width: 60px;
+}
+/* 90像素宽 */
+.width-90 {
+  width: 90px;
+}
+/* 上边距8像素 */
+.margin-top-8 {
+  margin-top: 8px;
+}
+/* 左边距8像素 */
+.margin-left-8 {
+  margin-left: 8px;
+}
+/* 右边距8像素 */
+.margin-right-8 {
+  margin-right: 8px;
+}
+/* 上边距12像素 */
+.margin-top-12 {
+  margin-top: 12px;
+}
+/* 下边距12像素 */
+.margin-bottom-12 {
+  margin-bottom: 12px;
+}
+/* 页面背景色 */
+.page-bg {
+  background-color: #EFEFF4;
+}
+/* 红色文字样式 */
+.red-link {
+  color: #D23930;
+  font-size: 14px;
+  font-weight: 400;
+}

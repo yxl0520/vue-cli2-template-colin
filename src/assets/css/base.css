@@ -1,0 +1,65 @@
+/*
+  框架 全局 基础样式
+  ** 可写在这 **
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+/* 填充父元素宽高 */
+.full {
+  width: 100%;
+  height: 100%;
+}
+/* 内容溢出，自动出现滚动条 */
+.overflow-auto {
+  overflow: auto;
+}
+/* y轴方向内容溢出，自动出现滚动条 */
+.overflow-scroll-y {
+  overflow-y: scroll;
+}
+/* x轴方向内容溢出，自动出现滚动条*/
+.overflow-scroll-x {
+  overflow-x: scroll;
+}
+/* base-layout中如果有标题栏，则设置header的高度为标题栏高 */
+.title-bar-height {
+  height: 46px;
+}
+/* flex布局,默认横向排列 */
+.flex {
+  display: flex;
+}
+/* flex布局，纵向排列 */
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+/* 垂直和水平方向居中 */
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+/* 主轴方向居中 */
+.flex-main-center {
+  justify-content: center;
+}
+/* 交叉轴方向居中 */
+.flex-cross-center {
+  align-items: center;
+}
+/* 主轴方向间隔 */
+.flex-space-between {
+  justify-content: space-between;
+}
+/* 主轴方向间隔环绕 */
+.flex-space-around {
+  justify-content: space-around;
+}

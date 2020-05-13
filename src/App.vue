@@ -5,6 +5,10 @@
 </template>
 
 <script>
+// 导入基本样式（暂不启用）
+// import '@/assets/css/base.css'
+// import '@/assets/css/app.css'
+
 export default {
   name: 'App'
 }

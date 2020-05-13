@@ -24,6 +24,35 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    /**
+     * @description: 优化eslint规则--->
+     */
+  
+    // 关闭全等
+    'eqeqeq': [0],
+    'no-unused-vars': [2, {
+       // 允许声明未使用变量
+       'vars': 'local',
+       // 参数不检查
+       'args': 'none'
+    }],
+    // 关闭语句强制分号结尾
+    'semi': [0],
+    // 空行最多不能超过100行
+    'no-multiple-empty-lines': [0, {'max': 100}],
+    // 关闭禁止混用tab和空格
+    'no-mixed-spaces-and-tabs': [0],
+    // 关闭检测是否是驼峰写法
+    'camelcase': 0,
+    // 关闭禁用不必要的转义
+    'no-useless-escape': 0,
+    // 关闭禁用抛出异常字面量
+    'no-throw-literal': 0,
+    // 关闭禁止重新声明变量
+    'no-redeclare': 0,
+    // 关闭对象字面量项尾不能有逗号
+    "comma-dangle": [2, "never"],
   }
 }
