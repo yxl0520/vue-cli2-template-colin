@@ -9,6 +9,10 @@
       <hr>
       这里，不通过mapstate辅助函数获取参数内容，如：<span class="user">{{$store.state.vuexModuleDemo.modulesUser2}}</span>
     </div>
+    <h2>3. axios demo</h2>
+    <div class="axios-get">
+      {{axiosData}}
+    </div>
   </div>
 </template>
 
@@ -21,6 +25,24 @@ export default {
     ...mapState('vuexModuleDemo', [ // 导入 vuex “模块仓库”
       'modulesUser'
     ])
+  },
+  mounted () {
+    this.axiosFetch()
+  },
+  data () {
+    return {
+      axiosData: 'axios-init'
+    }
+  },
+  methods: {
+    axiosFetch () {
+      // 将Axios挂载到vue.prototype原型链上，可以通过this.$http使用Axios
+      this.$http.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
+        .then(res => {
+          console.log('res-data', res.data)
+          this.axiosData = res.data.data.title
+        })
+    }
   }
 }
 </script>

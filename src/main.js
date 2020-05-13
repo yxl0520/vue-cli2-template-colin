@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store' // vuex状态管理器
+import plugin from './plugins' // 插件合集
 
 Vue.config.productionTip = false
 
@@ -12,6 +13,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  plugin,
   components: { App },
   template: '<App/>'
 })
