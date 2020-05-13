@@ -13,6 +13,14 @@
     <div class="axios-get">
       {{axiosData}}
     </div>
+    <div class="click-add">
+      <button @click="axiosFetchOrigin">点击加载</button>
+      <span>{{axiosData2}}</span>
+    </div>
+    <div class="click-add">
+      <button @click="axiosFetchCustom">点击加载</button>
+      <span>{{axiosData3}}</span>
+    </div>
     <h2>4. iconFont component Use Demo</h2>
     <div class="icon-font">
       <!-- 备注：演示用的icon-font库，引用自“员工自助”项目--Colin -->
@@ -25,6 +33,7 @@
 <script>
 import { mapState } from 'vuex'
 import IconFont from '@/components/common/IconFont'
+import axios from 'axios'
 export default {
   name: 'demo',
   components: {
@@ -41,17 +50,34 @@ export default {
   },
   data () {
     return {
-      axiosData: 'axios-init'
+      axiosData: 'axios-$http',
+      axiosData2: 'axios-origin',
+      axiosData3: 'axios-HTTP'
     }
   },
   methods: {
     axiosFetch () {
-      // 将Axios挂载到vue.prototype原型链上，可以通过this.$http使用Axios
+      // 方法一：将Axios挂载到vue.prototype原型链上，可以通过this.$http使用Axios
       this.$http.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
         .then(res => {
-          console.log('res-data', res.data)
+          // console.log('res-data', res.data)
           this.axiosData = res.data.data.title
         })
+    },
+    axiosFetchOrigin () {
+      // 方法二：虽然直接引用Axios，但项目中，有通过拦截器添加加载菊花，故资源请求时，是有加载提示动画的
+      axios.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
+        .then(res => {
+          console.log('res-data-Origin', res.data)
+          this.axiosData2 = res.data.data.visit_count
+        })
+    },
+    axiosFetchCustom () {
+      // 方法三：使用$axios，调用的是HTTP类内的封装方法
+      this.$axios.getData('topic/5433d5e4e737cbe96dcef312').then( res => { 
+        console.log('res-data-HTTP', res)
+        this.axiosData3 = res.data.author_id
+      })      
     }
   }
 }
@@ -66,6 +92,10 @@ export default {
     .user {
       color: blue
     }
+  }
+  .click-add {
+    margin-top: 15px;
+    font-weight: 700;
   }
 }
 </style>
