@@ -27,6 +27,12 @@
       这是“iconfont”：
       <icon-font type="icon_drop_down" iconStyle="color: #f0f; font-size: 30px" />
     </div>
+    <h2>5. Mock Demo</h2>
+    <div class="icon-font">
+      <!-- 备注：演示Mock.js接口拦截数据--Colin -->
+      <button @click="clickMock">点击加载</button>
+      <span>数据来自Mock：{{mockData}}</span>
+    </div>
   </div>
 </template>
 
@@ -52,7 +58,8 @@ export default {
     return {
       axiosData: 'axios-$http',
       axiosData2: 'axios-origin',
-      axiosData3: 'axios-HTTP'
+      axiosData3: 'axios-HTTP',
+      mockData: 'Mock-Demo'
     }
   },
   methods: {
@@ -74,10 +81,17 @@ export default {
     },
     axiosFetchCustom () {
       // 方法三：使用$axios，调用的是HTTP类内的封装方法
-      this.$axios.getData('topic/5433d5e4e737cbe96dcef312').then( res => { 
+      this.$axios.getData('topic/5433d5e4e737cbe96dcef312').then(res => {
         console.log('res-data-HTTP', res)
         this.axiosData3 = res.data.author_id
-      })      
+      })
+    },
+    clickMock () {
+      // Mock模拟数据功能演示，如需启用mock.js，请取消main.js入口处的注释
+      this.$http.get('http://text.com').then(res => {
+        console.log('res-data-Mock', res)
+        this.mockData = res.data.data.reviewGrp.creator
+      })
     }
   }
 }

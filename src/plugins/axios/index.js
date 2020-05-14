@@ -14,7 +14,7 @@ export default {
       // console.log('request success: show loading...')
       // console.log(config)
       $loading.show((config && config.loading) || {})
-      
+
       // 全局自定义配置请求头的Authorization示例：
       // config.headers.Authorization = 'token--demo'
       return Promise.resolve(config)

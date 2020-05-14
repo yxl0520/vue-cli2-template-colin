@@ -6,7 +6,7 @@ let lastloading
 
 const plugin = {
   install (Vue, config) {
-    console.log('loading-config', config)
+    // console.log('loading-config', config)
     const Loading = Vue.extend(LoadingComponent)
 
     if (!$vm) {

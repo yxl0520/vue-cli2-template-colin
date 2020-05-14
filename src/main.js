@@ -8,6 +8,11 @@ import plugin from './plugins' // 插件合集
 
 Vue.config.productionTip = false
 
+// 使用mockjs模拟接口数据
+if (process.env.NODE_ENV !== 'production') {
+  require('@/mock/index')
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
