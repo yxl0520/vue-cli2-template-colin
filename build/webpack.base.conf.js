@@ -78,7 +78,12 @@ module.exports = {
       {
         test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader'
-      }
+      },
+      // 处理 sass文件
+      { 
+        test: /\.scss$/, 
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }	
     ]
   },
   node: {

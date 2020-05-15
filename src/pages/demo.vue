@@ -115,3 +115,12 @@ export default {
   }
 }
 </style>
+<style lang="scss" scoped>
+.demo-wrapper {
+  .mock-data{
+    color: #00f;
+    font-weight: 700;
+    background-color: $bg; // 来自sass全局变量设置文件（@src/asset/style/global.scss）
+  }
+}
+</style>
