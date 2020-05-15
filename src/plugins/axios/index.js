@@ -38,9 +38,9 @@ export default {
     axios.jsonp = function (url, config) {
       return jsonp(axios, url, config)
     }
-    Vue.prototype.$http = axios
+    Vue.prototype.$axios = axios
   },
-  $http: axios
+  $axios: axios
 }
 
-export const $http = axios
+export const $axios = axios

@@ -31,7 +31,7 @@
     <div class="icon-font">
       <!-- 备注：演示Mock.js接口拦截数据--Colin -->
       <button @click="clickMock">点击加载</button>
-      <span>数据来自Mock：{{mockData}}</span>
+      <span class="mock-data">数据来自Mock：{{mockData}}</span>
     </div>
   </div>
 </template>
@@ -40,6 +40,7 @@
 import { mapState } from 'vuex'
 import IconFont from '@/components/common/IconFont'
 import axios from 'axios'
+// import {http} from '@/api'
 export default {
   name: 'demo',
   components: {
@@ -64,15 +65,15 @@ export default {
   },
   methods: {
     axiosFetch () {
-      // 方法一：将Axios挂载到vue.prototype原型链上，可以通过this.$http使用Axios
-      this.$http.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
+      // 方法一：将Axios挂载到vue.prototype原型链上，可以通过this.$axios使用Axios
+      this.$axios.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
         .then(res => {
           // console.log('res-data', res.data)
           this.axiosData = res.data.data.title
         })
     },
     axiosFetchOrigin () {
-      // 方法二：虽然直接引用Axios，但项目中，有通过拦截器添加加载菊花，故资源请求时，是有加载提示动画的
+      // 方法二：虽然直接引用Axios，但项目中，有通过拦截器添加加载菊花，故资源请求时，也是有加载提示动画的
       axios.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
         .then(res => {
           console.log('res-data-Origin', res.data)
@@ -80,15 +81,16 @@ export default {
         })
     },
     axiosFetchCustom () {
-      // 方法三：使用$axios，调用的是HTTP类内的封装方法
-      this.$axios.getData('topic/5433d5e4e737cbe96dcef312').then(res => {
+      // 方法三：使用$http，调用的是HTTP类内的封装方法
+      // console.log('api-init', http)
+      this.$http.getData('topic/5433d5e4e737cbe96dcef312').then(res => {
         console.log('res-data-HTTP', res)
         this.axiosData3 = res.data.author_id
       })
     },
     clickMock () {
       // Mock模拟数据功能演示，如需启用mock.js，请取消main.js入口处的注释
-      this.$http.get('http://text.com').then(res => {
+      this.$axios.get('http://text.com').then(res => {
         console.log('res-data-Mock', res)
         this.mockData = res.data.data.reviewGrp.creator
       })

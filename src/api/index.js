@@ -11,7 +11,7 @@ import config from '@/config'
 
 const http = HTTP.getInstance().config(config)
 
-Vue.prototype.$axios = http
+Vue.prototype.$http = http
 
 export {
   config,

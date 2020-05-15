@@ -7,7 +7,7 @@ export default {
       console.error('Cannot load axios Plugin')
     }
 
-    Vue.prototype.$axios = HTTP.getInstance().config(config)
+    Vue.prototype.$http = HTTP.getInstance().config(config)
   }
 }
 
