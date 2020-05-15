@@ -58,7 +58,15 @@ exports.cssLoaders = function (options) {
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less'),
+    // less: generateLoaders('less'),
+    less: generateLoaders('less').concat(
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: path.resolve(__dirname, '../src/assets/styles/common.less')
+        }
+      }
+    ),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     // scss: generateLoaders('sass'),
     // 使用sass全局变量

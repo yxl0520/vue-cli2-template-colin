@@ -1,6 +1,11 @@
 <template>
   <div class="demo-wrapper">
     <h2 class="title">1.less add demo</h2>
+    <div class="icon-font">
+      <!-- 备注：演示Mock.js接口拦截数据--Colin -->
+      <p class="less-demo">此背景是less全局变量控制</p>
+      <p class="sass-demo">此背景是sass全局变量控制</p>
+    </div>
     <h2>2.Vuex Use Demo</h2>
     <div class="vuex-demo">
       这是来自根仓库的state内容：<span class="user">{{user}}</span>
@@ -101,6 +106,9 @@ export default {
 
 <style lang="less" scoped>
 .demo-wrapper {
+  h2 {
+    font-size: 18px;
+  }
   .title {
     color: red;
   }
@@ -113,14 +121,21 @@ export default {
     margin-top: 15px;
     font-weight: 700;
   }
+  .less-demo {
+    padding: 5px 0;
+    color: red;
+    background-color: @bg; // 来自less全局变量设置文件（@src/asset/style/common.less）
+  }
 }
 </style>
 <style lang="scss" scoped>
+$scss-bg: $bg; // 1.定义局部变量，$scss-bg；2.全局变量$bg，则是来自sass全局变量设置文件（@src/asset/style/global.scss）
+
 .demo-wrapper {
-  .mock-data{
+  .sass-demo{
     color: #00f;
-    font-weight: 700;
-    background-color: $bg; // 来自sass全局变量设置文件（@src/asset/style/global.scss）
+    padding: 5px 0;
+    background-color: $scss-bg; // 使用局部变量
   }
 }
 </style>
