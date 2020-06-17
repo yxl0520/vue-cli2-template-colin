@@ -11,9 +11,14 @@ export default {
     }
 
     axios.interceptors.request.use(function (config) {
-      // console.log('request success: show loading...')
       // console.log(config)
-      $loading.show((config && config.loading) || {})
+
+      // 如果存在“hideLoading”配置项，则不显示加载提示动画
+      let isShowLoading = !config.hideLoading
+      if (isShowLoading) {
+        $loading.show((config && config.loading) || {});
+        // console.log('request success: show loading...')
+      }
 
       // 全局自定义配置请求头的Authorization示例：
       // config.headers.Authorization = 'token--demo'

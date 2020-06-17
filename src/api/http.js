@@ -65,7 +65,7 @@ export class HTTP {
    * @description: 通用请求接口
    * @param {String} url 接口地址
    * @param {Object} params 参数
-   * @param {Object} options 配置 {baseUrl：指定根地址； method：指定调用方法}
+   * @param {Object} options 配置 {baseUrl：指定根地址； method：指定调用方法; hideLoading: true 关闭加载}
    * @return {Promise} Axios
    * @memberof MAS
    */
