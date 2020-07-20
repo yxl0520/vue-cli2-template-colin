@@ -40,7 +40,8 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: true
+    cssSourceMap: true,
+    usePx2rem: true // 是否使用px2rem转换工具
   },
 
   build: {
@@ -51,6 +52,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    usePx2rem: true, // 是否使用px2rem转换工具
 
     /**
      * Source Maps

@@ -29,10 +29,24 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      //一般设置75
+      remUnit: 37.5 // 37.5按照375设计图尺寸在设计，75安装750设计图尺寸设计
+    }
+  }
+  // 来源：https://blog.csdn.net/qq_15901351/article/details/102244374
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
+    // 根据配置，是否使用px2remLoader
+    if (options.usePx2rem) {
+      loaders.push(px2remLoader);
+    }
+    
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
