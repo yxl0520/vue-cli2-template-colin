@@ -1,5 +1,6 @@
 <template>
   <div class="demo-wrapper">
+    <h1 @click="$router.go(-1)" class="goback">返回首页</h1>
     <h2 class="title">1.less add demo</h2>
     <div class="icon-font">
       <!-- 备注：演示Mock.js接口拦截数据--Colin -->
@@ -105,9 +106,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.goback {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-weight: normal;
+  font-size: 14PX;
+}
 .demo-wrapper {
   h2 {
-    font-size: 18px;
+    font-size: 18PX;
   }
   .title {
     color: red;

@@ -2,13 +2,8 @@
   <div class="hello">
     <img src="@/assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2>前往演示页面</h2>
-    <ul>
-      <li>
-        <span class="demo-page" @click="goToDemo">Demo Page</span>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
+    <h2 @click="goToDemo" :style="{'font-weight': 600, color: 'red'}">前往演示页面</h2>
+    <h2>vue全家桶</h2>
     <ul>
       <li>
         <a
@@ -52,6 +47,13 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    goToDemo () {
+      this.$router.push({
+        name: 'demo'
+      })
     }
   }
 }
