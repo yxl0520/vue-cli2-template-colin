@@ -1,8 +1,10 @@
 <template>
-  <div class="hello">
+  <div class="hello full">
     <img src="@/assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2 @click="goToDemo" :style="{'font-weight': 600, color: 'red'}">前往演示页面</h2>
+    <!-- 使用全局样式，通过@import引入app.css实现 -->
+    <h2  class="btn-stroke-round" @click="goToDemo" :style="{'font-weight': 600, color: 'red', margin: '10px'}">前往演示页面</h2>
+
     <h2>vue全家桶</h2>
     <ul>
       <li>
@@ -38,6 +40,10 @@
         </a>
       </li>
     </ul>
+    <div class="custom-fonts">正使用DIN字体：1236547992</div>
+    <div class="no-fonts">不使用DIN字体：1236547992</div>
+
+    <div class="img-demo"></div>
   </div>
 </template>
 
@@ -74,5 +80,15 @@ li {
 }
 a {
   color: #42b983;
+}
+/* 使用din字体对比 */
+.custom-fonts {
+  margin: 8px;
+  font-size: 16px;
+  font-family: 'DIN';
+}
+.no-fonts {
+  margin: 8px;
+  font-size: 16px;
 }
 </style>

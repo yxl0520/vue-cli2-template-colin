@@ -6,8 +6,11 @@
 
 <script>
 // 导入基本样式（暂不启用）
-import '@/assets/css/base.css'
+// import '@/assets/css/base.css'
 // import '@/assets/css/app.css'
+import '@/assets/css/index.css'
+// 导入自定义字体
+import '@/assets/fonts/custom-fonts.css'
 
 export default {
   name: 'App'

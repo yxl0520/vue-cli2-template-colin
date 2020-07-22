@@ -1,0 +1,22 @@
+
+/*
+ * @Description: 二三倍图适配、1px高清适配
+ * @Author: Colin
+ * @Date: 2020-07-22 13:52:38
+ * @Reference: https://www.cnblogs.com/zjx304/p/9803058.html
+ */ 
+
+// 2,3倍图适配(示例一)
+@mixin bg-image($url, $ext: ".png") {
+  background-image: url($url + "@2x" + $ext);
+  @media (-webkit-min-resolution: 3dppx),(min-resolution: 3dppx) {
+    background-image: url($url + "@3x" + $ext);
+  }
+}
+// 2,3倍图适配(示例二)
+// @mixin bg-image($url){
+//   background-image: url("~imgs/icon/" + $url + "@2x.png");
+//   @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+//     background-image: url("~imgs/icon/" + $url + "@3x.png");
+//   }
+// }

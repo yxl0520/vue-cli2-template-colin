@@ -39,6 +39,7 @@
       <button @click="clickMock">点击加载</button>
       <span class="mock-data">数据来自Mock：{{mockData}}</span>
     </div>
+    <div class="img-demo"></div>
   </div>
 </template>
 
@@ -137,6 +138,7 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+// @import '@/assets/sass/mixin.scss';
 $scss-bg: $bg; // 1.定义局部变量，$scss-bg；2.全局变量$bg，则是来自sass全局变量设置文件（@src/asset/style/global.scss）
 
 .demo-wrapper {
@@ -145,5 +147,13 @@ $scss-bg: $bg; // 1.定义局部变量，$scss-bg；2.全局变量$bg，则是�
     padding: 5px 0;
     background-color: $scss-bg; // 使用局部变量
   }
+}
+/* 多倍图demo */
+.img-demo {
+  width: 200px;
+  height: 150px;
+  // @include bg-image('../assets/imgs/Cartoon', '.jpg');
+  @include bg-image('~@/assets/imgs/pic', '.jpg');
+  background-size: 100% 100%;
 }
 </style>

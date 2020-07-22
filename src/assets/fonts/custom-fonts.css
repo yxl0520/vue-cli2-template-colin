@@ -1,0 +1,13 @@
+/* DIN字体，适用于数字（相同的宽度，可以显示更多位的数字） */
+@font-face {
+  font-family: "DIN";
+  src: url('din/DIN-Regular.otf');
+}  
+@font-face {
+  font-family: "DIN-Blod";
+  src: url('din/DIN-Bold_0.otf');
+}
+@font-face {
+  font-family: "DIN-Light";
+  src: url('din/DIN-Light_0.otf');
+}

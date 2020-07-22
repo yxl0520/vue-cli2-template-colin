@@ -77,7 +77,7 @@ exports.cssLoaders = function (options) {
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: path.resolve(__dirname, '../src/assets/styles/common.less')
+          resources: path.resolve(__dirname, '../src/assets/less/common.less')
         }
       }
     ),
@@ -88,7 +88,7 @@ exports.cssLoaders = function (options) {
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: path.resolve(__dirname, '../src/assets/styles/global.scss')
+          resources: path.resolve(__dirname, '../src/assets/sass/global.scss')
         }
       }
     ),
