@@ -32,7 +32,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'], // 这里的顺序代表匹配后缀的优先级，例如对于 index.js 和 index.vue，会优先选择 index.js
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),

@@ -12,7 +12,6 @@ export default {
 
     axios.interceptors.request.use(function (config) {
       // console.log(config)
-
       // 如果存在“hideLoading”配置项，则不显示加载提示动画
       let isShowLoading = !config.hideLoading
       if (isShowLoading) {
@@ -30,13 +29,11 @@ export default {
       return Promise.reject(error)
     })
     axios.interceptors.response.use(function (response) {
-      // console.log('response success: hide loading...')
-      // console.log(response)
+      // console.log('response success: hide loading...', response)
       $loading.hide({}, response, $loading.ajaxFeedbackType.RES_SUCC)
       return Promise.resolve(response)
     }, function (error) {
-      // console.log('response fail: hide loading...')
-      console.log(error)
+      // console.log('response fail: hide loading...', error)
       $loading.hide({}, error, $loading.ajaxFeedbackType.RES_FAIL)
       return Promise.reject(error)
     })

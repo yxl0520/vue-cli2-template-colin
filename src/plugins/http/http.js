@@ -1,5 +1,4 @@
 import axios from 'axios'
-// import { $http as axios } from '@/plugins/axios'
 
 export default {
   install (Vue, config) {
@@ -8,6 +7,7 @@ export default {
     }
 
     Vue.prototype.$http = HTTP.getInstance().config(config)
+    console.log('Vue.prototype.$http', HTTP.getInstance().config(config));
   }
 }
 

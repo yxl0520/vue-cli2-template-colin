@@ -99,7 +99,6 @@ const plugin = {
         }
       }
     }
-
     Vue.prototype.$loading = loading
     Vue.$loading = loading
   }

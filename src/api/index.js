@@ -1,19 +1,17 @@
 /*
- * @Description: 在这设置测试环境/正式环境的切换等(例如：axios的baseUrl、Authorization等；)
+ * @Description: 在config导入 测试环境/正式环境 的baseUrl等切换参数 等(例如：axios的baseUrl、Authorization等；)
+ * @Description: 在apiPath导入 接口路径、固定请求参数 等
  * @Author: Colin
  * @Date: 2020-03-24 22:51:18
  */
-import Vue from 'vue'
-import { HTTP } from './http'
-import config from '@/config'
+import config, { TestAccount } from './apiConfig';
+import { HTTP_PATH, CONST_PARAM } from './apiPath';
 
 // console.log('configObj', config)
 
-const http = HTTP.getInstance().config(config)
-
-Vue.prototype.$http = http
-
 export {
   config,
-  http
-}
+  TestAccount,
+  HTTP_PATH,
+  CONST_PARAM
+};

@@ -1,6 +1,6 @@
-import { http, HTTP_PATH, CONST_PARAM } from '@/api/index'
+import { HTTP_PATH, CONST_PARAM } from '@/api/index'
+import { http } from '@/plugins/http';
 import DesUtils from '@/common/DesUtils'
-
 
 /**
  * 登录

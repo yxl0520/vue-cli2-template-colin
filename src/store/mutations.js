@@ -3,4 +3,4 @@ export default {
   // showLoading (state, payload) {
   //   state.loading = payload
   // }
-}
+};

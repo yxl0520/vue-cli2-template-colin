@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 /* eslint-disable no-new */
+// var vm = new Vue({
 new Vue({
   el: '#app',
   router,
@@ -23,3 +24,7 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+// console.log('vm', vm)
+// console.log('vm', vm.$axios)
+// console.log('vm', vm.$http);
