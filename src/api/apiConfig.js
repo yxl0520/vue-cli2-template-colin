@@ -26,7 +26,7 @@ const httpConfig =
         baseUrl: 'https://ccc.com:8085' // 打包:正式环境（npm run build）
       }
     : {
-      baseUrl: toggleBaseUrl(3) // 开发：dev环境（npm run dev）
+      baseUrl: toggleBaseUrl(2) // 开发：dev环境（npm run dev）【请输入num进行baseUrl切换】
       // method: 'GET',
       // code: '',
       // token: '',

@@ -1,6 +1,6 @@
 <template>
   <div class="vuex-module-demo">
-    <h1>3.Vuex Use Demo</h1>
+    <h1>4.Vuex Use Demo</h1>
     <div>
       <h2>(1) 来自根仓库的state内容：</h2>
       <span class="user">{{user}}</span>

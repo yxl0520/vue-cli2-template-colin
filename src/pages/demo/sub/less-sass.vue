@@ -26,6 +26,7 @@ h1 {
   text-align: left;
   font-size: 18px;
   margin: 8px 8px;
+  font-weight: bold;
 }
 </style>
 

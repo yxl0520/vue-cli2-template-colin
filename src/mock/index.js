@@ -37,7 +37,7 @@ console.log('Now mock-2020.05.14')
 Mock.mock('http://text.com', 'get', success(reviewDistributeInfo))
 
 /* 考察组成员接口 */
-Mock.mock(/\/mockapi\/vp\/PersonEntry/, 'get', success(personEntryList))
+Mock.mock(/\/mockapi\/demo\/PersonEntry/, 'get', success(personEntryList))
 
 /* 获取供方考察评审分发表信息接口 */
 Mock.mock(/\/mockapi\/supply\/actionGetInfo\/123/, 'get', fail(-1, '参数错误：123'))
