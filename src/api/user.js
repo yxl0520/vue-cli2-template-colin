@@ -1,6 +1,6 @@
 import { HTTP_PATH, CONST_PARAM } from '@/api/index'
 import { http } from '@/plugins/http';
-import DesUtils from '@/common/DesUtils'
+// import DesUtils from '@/common/DesUtils'
 
 /**
  * 登录
@@ -10,7 +10,7 @@ import DesUtils from '@/common/DesUtils'
  */
 export async function login ({ userName, password }) {
   let params = { userName }
-  params.password = DesUtils.encrypt(password, userName)
+  // params.password = DesUtils.encrypt(password, userName)
   params.appClientId = CONST_PARAM.appClientId
   return http.getData(HTTP_PATH.loginAction, params)
 }
