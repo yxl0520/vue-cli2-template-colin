@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/mockapi': {
+        target: 'http://localhost:8900', // 注意：这里只要填写 域名+端口 部分就可以了
+        changeOrigin: true, // 开启跨域
+        pathRewrite: {
+          '^/mockapi': '/api' // 这里填写的属性名，会和target字段的值进行组合，最终表示请求的接口路径为：'http://text.com' + '/mockapi' + 'url'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

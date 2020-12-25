@@ -47,28 +47,14 @@ Vue.$loading.show({text: '请稍等'})
 - 重新封装了 axios，并导出一个class 请求类
 - 在这个文件中，实现返回状态的判断，如错误代码拦截判断等
 
-（3）文件`src\plugin\http\index.js`
-
-```js
-import { HTTP } from './http'
-import Vue from 'vue'
-
-// .config()方法会返回HTTP类
-const http = HTTP.getInstance().config(config)
-
-// 将HTTP类，即axios封装类添加到vue原型链上
-Vue.prototype.$http = http
-console.log('http--custom:', http)
-```
-
 > 综上：我们在组件中，使用axios请求接口的方法有以下几种方法
 
 1. 通过`this.$axios`
 
 ```js
-// 方法一：this.$http 与 axios 原生方法一样
+// 方法一：this.$axios 与 axios 原生方法一样
 
-// 将Axios挂载到vue.prototype原型链上，可以通过this.$http使用Axios
+// 将Axios挂载到vue.prototype原型链上，可以通过this.$axios使用Axios
 this.$axios.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
   .then(res => {
     // console.log('res-data', res.data)
