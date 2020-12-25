@@ -1,4 +1,4 @@
-import { showError } from '@/plugins/http/errorhandler';
+import { showError } from '@/plugins/axios/errorhandler';
 
 export default {
   // 更新加载状态

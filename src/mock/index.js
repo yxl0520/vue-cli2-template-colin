@@ -32,7 +32,7 @@ Mock.setup({
   timeout: '1200-2600'
 })
 
-console.log('Now mock-2020.05.14')
+console.log(`Now mock-${new Date().toLocaleDateString()}`)
 /* example */
 Mock.mock('http://text.com', 'get', success(reviewDistributeInfo))
 

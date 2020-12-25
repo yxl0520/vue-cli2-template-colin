@@ -1,5 +1,5 @@
 import { HTTP_PATH, CONST_PARAM } from '@/api/index'
-import { http } from '@/plugins/http';
+import { http } from '@/plugins/axios'
 // import DesUtils from '@/common/DesUtils'
 
 /**

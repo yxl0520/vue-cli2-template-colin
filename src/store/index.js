@@ -24,3 +24,26 @@ export default new Vuex.Store({
   strict: debug,
   modules
 })
+
+// #region 订阅 store 的 mutation
+// const store = new Vuex.Store({
+//   state,
+//   mutations,
+//   getters,
+//   actions,
+//   strict: debug,
+//   modules
+// })
+// store.subscribe((mutation, state) => {
+//   switch (mutation.type) {
+//     case "setToken":
+//       localStorage.setItem("token", JSON.stringify(state.token));
+//       break;
+//     case "addCart":
+//       localStorage.setItem("cart", JSON.stringify(state.cart));
+//       break;
+//   }
+// });
+
+// export default store
+// #endregion
