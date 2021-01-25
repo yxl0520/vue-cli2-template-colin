@@ -1,3 +1,10 @@
+/*
+ * @Description: 封装axios：增加加载动画、baseUrl配置等
+ * @example：http.getData(HTTP_PATH.actionGetBuildingByLandName, params, { handleHideLoading: true }); 关闭加载动画
+ * @example：http.getData(HTTP_PATH.contractSignName, params, { method: 'post' }); 使用post方式
+ * @Author: Colin
+ * @Date: 2020-05-12 13:57:53
+ */
 import axios from 'axios'
 import loading from '../Loading'
 // import jsonp from './jsonp/index'
@@ -138,7 +145,7 @@ export class HTTP {
       ...options
     }).then(result => this.responser(result))
 
-    // 第二种处理方法
+    // #region 第二种处理方法
     // let tempParams = null
     // if (method.toLocaleLowerCase() === 'get') {
     //   tempParams = params
@@ -150,6 +157,7 @@ export class HTTP {
     //   data: method === 'post' && params,
     //   ...options
     // }).then(result => this.responser(result))
+    // #endregion
   }
 
   /**
